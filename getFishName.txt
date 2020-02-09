@@ -1,5 +1,6 @@
 function setDate() {
   // https://qiita.com/kimikimi714/items/19b6a42a8a416f669decから写したコードをベースに、SpreadsheetAppの繰り返しをなくして高速化した
+  
   // var start = new Date(); //https://tonari-it.com/gas-spreadsheet-speedup/から時間測定部分を写した行  
 
   var rawDateColumnIndex = 2; // IFTTTの日時データを保持する列のインデックス
