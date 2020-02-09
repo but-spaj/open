@@ -1,0 +1,32 @@
+function setDate() {
+  //https://qiita.com/kimikimi714/items/19b6a42a8a416f669decから写したコードがベース
+
+  var start = new Date(); //https://tonari-it.com/gas-spreadsheet-speedup/から時間測定部分を写した行
+  
+  var dateColumnIndex = 1; //spreadsheetに合った日時データを保持したい列のインデックス
+  var rawDateColumnIndex = 2; //IFTTTの日時データを保持する列のインデックス
+
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet(); //bookの指定
+  var sheet = spreadsheet.getActiveSheet(); //sheetの指定
+  var allData = sheet.getRange(2, dateColumnIndex, 1335, 2).getValues(); //1,2列を配列に格納
+  
+  for (var i = 0; i < allData.length; i++) {
+    // 変更前に使用していた変数 var date = allData[i][dateColumnIndex - 1];
+    var rawDate = allData[i][rawDateColumnIndex - 1]; //変数にセル番地を格納
+    var rawDateValueM = sheet.getRange(i + 2, rawDateColumnIndex).getDisplayValue().slice(-1); //変数にセル番地に表示された文字列の末尾を格納
+    // 変更前はこれだった if (date === "" && rawDate !== "") {
+      // 変更前はこれだった sheet.getRange(i + 2, dateColumnIndex).setValue(covertIFTTTDateToGoogleSpreadsheetDate(rawDate));
+    if (rawDateValueM === "M" ) { //変更後:rawDataValueMにある文字列右端が"M"、つまりIFTTTの日時データならTrue
+      sheet.getRange(i + 2, rawDateColumnIndex).setValue(covertIFTTTDateToGoogleSpreadsheetDate(rawDate)); //変更後：IFTTTの日時データを保持するセルに変換後日時データを入れる
+    }
+  }
+  var end = new Date();  //https://tonari-it.com/gas-spreadsheet-speedup/から時間測定部分を写した行
+  var span_sec = (end - start)/1000;  //https://tonari-it.com/gas-spreadsheet-speedup/から時間測定部分を写した行
+  Logger.log("処理時間は " + span_sec + " 秒でした" );  //https://tonari-it.com/gas-spreadsheet-speedup/から時間測定部分を写した行
+}
+
+function covertIFTTTDateToGoogleSpreadsheetDate(str) {
+  var moment = Moment.moment(str, "MMMM D, YYYY hh:mma"); // strには"September 26, 2017 at 06:52PM"のようなものが入る
+
+  return moment.format("YYYY/MM/DD HH:mm").toString();
+}
