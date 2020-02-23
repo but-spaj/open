@@ -5,14 +5,14 @@
 # クラスを作成する
 
 # class クラス名でクラスを作成
-class Player:
+class Player0:
     # メソッドを定義。引数にはselfを使う
     def walk(self):
         print("ゆうしゃは荒野をあるいていた")
     def attack(self, enemy):
         print("ゆうしゃは" + enemy + "を攻撃した")
 # 変数に格納してオブジェクトを生成
-player1 = Player() 
+player1 = Player0() 
 # オブジェクト.メソッドで、クラスで定義したメソッドの呼び出し
 player1.walk()
 player1.attack("スライム")
@@ -72,6 +72,7 @@ enemies.append(Enemy("ドラゴン"))
 
 for enemy in enemies:
     # 共通のメソッドが使える
+    # メソッドを呼び出すには、for文内で格納するenemy変数を使う
     enemy.attack()
 
 # 9.クラス — Python 3.6.5 ドキュメント
@@ -79,3 +80,38 @@ for enemy in enemies:
 
 # Python基礎講座(13 クラス)
 # https://qiita.com/Usek/items/a206b8e49c02f756d636
+
+
+# Python入門編8 クラスを理解しよう 05:引数と戻り値のあるメソッドを作ろう
+# クラスで、引数と戻り値のあるメソッドを作る
+
+class Item:
+    # クラス変数はすべてのインスタンスで共通で使用できる
+    tax = 1.1
+    
+    def __init__(self, price, quantity):
+        # 2つのインスタンス変数に引数を代入
+        self.price = price
+        self.quantity = quantity
+    
+    # クラス変数はクラス名.変数名で使用できる
+    # 整数にするためにint()関数を使用する
+    def total(self):
+        return int(self.price * self.quantity * Item.tax)
+    
+apple = Item(100, 10)
+total = apple.total()
+# total関数の戻り値を文字列と組み合わせるためにstr()関数を使う
+print("合計金額は" + str(total) + "円です")
+
+orange = Item(150, 10)
+print("合計金額は" + str(orange.total()) + "円です")
+print("消費税込の金額は、元の金額に" + str(Item.tax) + "倍したものです")
+
+# 9.クラス — Python 3.6.5 ドキュメント
+# https://docs.python.org/ja/3/tutorial/classes.html
+
+# Python基礎講座(13 クラス)
+# https://qiita.com/Usek/items/a206b8e49c02f756d636
+
+
