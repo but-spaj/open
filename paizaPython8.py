@@ -115,3 +115,39 @@ print("消費税込の金額は、元の金額に" + str(Item.tax) + "倍した�
 # https://qiita.com/Usek/items/a206b8e49c02f756d636
 
 
+# Python入門編8 クラスを理解しよう 06:文字列とリストのメソッドを使ってみよう
+# 文字列とリストのメソッドを使ってみよう
+# すでにPythonで用意されたメソッドを使う
+
+# 文字列で使用できるメソッド
+
+text = "pYthon"
+print(text)
+# 先頭の1文字を大文字、他を小文字
+print(text.capitalize())
+# すべて大文字
+print(text.upper())
+
+# 文字列をリストに変換するメソッド
+
+players = "勇者,戦士,魔法使い,忍者"
+# 引数で指定した文字で文字列を分割してリストを返す
+list = players.split(",")
+print(list)
+
+# リストで使用できるメソッド
+
+# 引数で指定した文字をリストから削除
+list.remove("忍者")
+print(list)
+# リストに追加する
+list.append("霧島")
+print(list)
+
+# 4.7.1. 文字列メソッド
+# https://docs.python.jp/3/library/stdtypes.html#string-methods
+
+# 5.1. リスト型についてもう少し
+# https://docs.python.jp/3/tutorial/datastructures.html#more-on-lists
+
+
