@@ -150,4 +150,42 @@ print(list)
 # 5.1. リスト型についてもう少し
 # https://docs.python.jp/3/tutorial/datastructures.html#more-on-lists
 
+# 演習問題
+msg = input()
+# msgが小文字の場合はTrue、大文字の場合はFalse
+print(msg.islower())
+# リストのインデックスiに要素xを挿入する
+# team.insert(3, "盗賊")
 
+
+# Python入門編8 クラスを理解しよう 07:アクセス制限を理解しよう
+# アクセス制限を理解する
+# メソッドや変数に対する外部からのアクセスを制限する
+# 完全にアクセス不可にできるわけではないが、変数を管理しやすくできる
+
+class Player2:
+    def __init__(self, job, weapon):
+        self.job = job
+        # プライベート変数orプライベートプロパティ：変数名の前に__を付けるとクラスの外では呼び出せない変数
+        self.__weapon = weapon
+
+    def walk(self):
+        print(self.job + "は荒野を歩いていた")
+        # 
+        self.__attack("スライム")
+
+    # プライベートメソッド：メソッド名の前に__を付けるとクラスの中でしか呼び出せないメソッドになる
+    def __attack(self, enemy):
+        print(self.__weapon + "で" + enemy + "を攻撃")
+
+
+player1 = Player2("戦士", "剣")
+player1.walk()
+# player1.__attack("スライム")
+# print(player1.__weapon)
+
+# プライベートメンバ - Python学習講座
+# http://www.python.ambitious-engineer.com/archives/323
+
+# 9.6. プライベート変数
+# https://docs.python.jp/3/tutorial/classes.html#private-variables
