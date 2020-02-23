@@ -49,3 +49,33 @@ player1.walk()
 # Pythonのクラス変数とインスタンス変数 | UX MILK
 # http://uxmilk.jp/41600
 
+
+# Python入門編8 クラスを理解しよう 04:RPGの敵クラスを作ろう
+# RPGの敵クラスを作る
+
+import random
+damage = random .randint(1, 30)
+
+class Enemy:
+    def __init__(self, name):
+        self.name = name
+    
+    def attack(self):
+        print(self.name + "の攻撃!勇者に" + str(damage) + "のダメージ!")
+
+# オブジェクトをリストに追加
+# オブジェクトはクラスを変数やリストに格納して生成する
+enemies = []
+enemies.append(Enemy("スライム"))
+enemies.append(Enemy("半魚人"))
+enemies.append(Enemy("ドラゴン"))
+
+for enemy in enemies:
+    # 共通のメソッドが使える
+    enemy.attack()
+
+# 9.クラス — Python 3.6.5 ドキュメント
+# https://docs.python.org/ja/3/tutorial/classes.html
+
+# Python基礎講座(13 クラス)
+# https://qiita.com/Usek/items/a206b8e49c02f756d636
