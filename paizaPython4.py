@@ -97,7 +97,106 @@ team.pop(0)    # pop can drop an element from list
 print(len(team))
 print(team)
 
+#05:ループでリストを処理しよう
+#Pythonのfor inとリストを組み合わせて、HTMLのプルダウンリストを作成します。
+'''配列(リスト)の要素を1つずつ処理するには (for / foreach) | hydroculのメモ
+https://hydrocul.github.io/wiki/programming_languages_diff/list/foreach.html
 
+覚えるだけでPythonのコードが少し綺麗になる頻出イディオム - タオルケット体操
+http://hachibeechan.hateblo.jp/entry/Python-idiom-101'''
+
+# coding: utf-8
+# ループでリストを操作する
+
+team = ["勇者", "戦士", "魔法使い"]    # list use []
+print(team[0])    #[index]
+
+for i in range(5):
+    print(i)
+
+
+print("<select name = 'job'>")
+for i in team:    # assign each element in list for len
+    print(i)    # assign 0,1,2,,, element 
+    print(team[0])
+    print("<option>" + i + "</option>")
+    team.pop(0)
+team.append(1)
+print("</select>")
+print(len(team))
+
+#06:カンマ区切りデータを、splitで分割しよう 
+#標準入力から取り込んだデータをリストに格納する方法を学びます。そのために、カンマで区切られた1行データを、区切りごとに分割してリストに格納します。
+
+# coding: utf-8
+# 取り込んだデータをリストに格納する
+
+line = input().rstrip().split(",")    # divide input with agg andget as list
+print(line)
+print(len(line))
+
+for enemy in line:    # no need to get len of list
+    print(enemy)
+    
+#07:複数行データを、リストに格納しよう
+#標準入力から読み込んだ複数の行のデータをリストに格納します。その時に、読み込む行数が事前に分からなくても、きちんと対応できるようにしましょう。
+
+# coding: utf-8
+# 複数行データをリストに格納する
+'''ファイルの中身を1行ずつテキスト処理するには | hydroculのメモ
+https://hydrocul.github.io/wiki/programming_languages_diff/io/each-line.html
+
+python: ファイルの読み込み–read()、readlines()、readline() (Python 入門) | OpenBook
+https://openbook4.me/projects/147/sections/885'''
+
+line = input().rstrip()    #use standard input with input().rstrip()
+print(line)
+
+import sys, random
+
+try:
+    array = []
+    for line in sys.stdin.readlines():    #read some stdin lines by readlines()
+        array.append(line.rstrip())    #add each lines to []
+        print(array)
+except Exception as e:
+    print(e)
+finally:
+    print(array)
+
+#08:リストを使ったランダムくじ 
+#randrange関数 ランダムな値を生成します。
+#引数を1つ指定した場合は、ゼロから引数以下の値をランダムに生成します
+'''random — 擬似乱数を生成する
+http://docs.python.jp/3/library/random.html
+
+ライブラリ：random - Life with Python
+http://www.lifewithpython.com/2013/04/random.html'''
+
+# coding: utf-8
+# リストを使ったランダムくじ
+# スライム,モンスター,ドラゴン,魔王
+
+import random, sys
+try:
+    line = input().rstrip().split(",")    #use divide line with split(",")
+    for enemy in line:    #each diveded lines added to [] 
+        print(enemy + " !!!")
+    
+    #print(len(line))    #count line elements by len()
+    
+    #chooseEnemy = random.randint(0,len(line) - 1)
+    chooseEnemy = random.randrange(len(line))    #randrange used to choose from len(line)
+    damage = random.randint(1,10)
+    print("you attacked " + line[chooseEnemy])
+    print("!!!!!")
+    print(line[chooseEnemy] + " " + str(damage * 10) + " damaged!")
+
+except Exception as e:
+    print(e)
+    sys.stdout.write("error")
+finally:
+    print("you killed it !")
 
 
 
