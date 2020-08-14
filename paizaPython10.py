@@ -1,37 +1,46 @@
-#01:例外処理の概要を理解しよう
-#実行時に発生する様々な問題に対してプログラムで対応する、例外処理について学習します。
-#プログラムを安定して動作させることでシステムの品質を高める、例外処理について理解を深めましょう。
+''' # Python入門編10: 例外処理を理解しよう '''
 
-#NameError: name 'b' is not defined 変数が定義されていない実行時エラー(→ 例外:exception)
+'''
+# 01:例外処理の概要を理解しよう
+実行時に発生する様々な問題に対してプログラムで対応する、例外処理について学習します。
+プログラムを安定して動作させることでシステムの品質を高める、例外処理について理解を深めましょう。
 
-#例外処理
-#try : バグ検出の範囲を予め決めておいて、例外を捕まえる
-#except : 捕まえた例外への対応方法を定める
-#raise : その場で対応しない　← は？
-#以上が適切に行われなければ、例外でプログラムが止まる。
+NameError: name 'b' is not defined 変数が定義されていない実行時エラー(→ 例外:exception)
 
-#02:簡単な例外処理してみよう
-#    answer = 100 / number
-#ZeroDivisionError: division by zero
+# 例外処理
+try : バグ検出の範囲を予め決めておいて、例外を捕まえる
+except : 捕まえた例外への対応方法を定める
+raise : その場で対応しない　← は？
+以上が適切に行われなければ、例外でプログラムが止まる。
+'''
+
+
+'''
+# 02:簡単な例外処理してみよう
+
+answer = 100 / number
+ZeroDivisionError: division by zero
+
+# 参考URL
+エラーと例外 — Python 3.6.5 ドキュメント
+https://docs.python.jp/3/tutorial/errors.html
+
+これでマスター！try-exceptの使い方を学ぼう！ | 侍エンジニア塾ブログ
+https://www.sejuku.net/blog/23044
+'''
 
 # coding: utf-8
 # Your code here!
 
 print(1)
-try: #try block
+try:    # try block
     number = 0
     answer = 100 / number
     print(answer)
-except ZeroDivisionError as e: # if except occurs in try block use error object as e variable
+except ZeroDivisionError as e:    # if except occurs in try block use error object as e variable
     print(e)
-finally: #どっちでもやってほしいコード
+finally:    # どっちでもやってほしいコード
     print(2)
-
-#エラーと例外 — Python 3.6.5 ドキュメント
-#https://docs.python.jp/3/tutorial/errors.html
-
-#これでマスター！try-exceptの使い方を学ぼう！ | 侍エンジニア塾ブログ
-#https://www.sejuku.net/blog/23044
 
 # coding: utf-8
 # 例外処理を定義しよう
@@ -46,6 +55,8 @@ except ZeroDivisionError as e:
     print(e)
 finally:
     print("勇者は勝利した")
+
+
 
 #03:いろいろな形式で例外に対応しよう 
 #例外情報を表示するだけでなく、分かりやすいエラーメッセージを追加してみましょう
