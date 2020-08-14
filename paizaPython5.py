@@ -1,16 +1,26 @@
-#01:辞書とは何かを学ぼう
-#連想配列のこと
-#リストの箱に名前をつけることができる
-'''辞書(ディクショナリ) - Python入門
+''' # Python入門編5: 辞書(ディクショナリ)の基礎 '''
+
+'''
+# 01:辞書とは何かを学ぼう
+連想配列のこと
+リストの箱に名前をつけることができる
+
+# 参考URL
+辞書(ディクショナリ) - Python入門
 https://www.pythonweb.jp/tutorial/dictionary/
 
 Python - 辞書（ディクショナリ）の使い方 - ざっくりん雑記
 http://azuuun-memorandum.hatenablog.com/entry/2015/05/01/075000
 
 Pythonで辞書（ディクショナリ）型を使う方法【初心者向け】 | TechAcademyマガジン
-https://techacademy.jp/magazine/15639'''
+https://techacademy.jp/magazine/15639
+'''
 
-#02:辞書を作る
+
+'''
+# 02:辞書を作る
+'''
+
 # coding: utf-8
 # Your code here!
 
@@ -31,9 +41,13 @@ try:
     print(enemyDictionary[level])
 except KeyError as e:
     print(e)
-    
-#03:辞書の基本操作
-#Pythonを使って辞書の追加、上書き、削除といった機能を試してみましょう。
+
+
+'''
+# 03:辞書の基本操作
+Pythonを使って辞書の追加、上書き、削除といった機能を試してみましょう。
+'''
+
 # coding: utf-8
 # Your code here!
 
@@ -43,23 +57,29 @@ print(enemies)
 print(enemies["ザコ"])
 print(len(enemies))
 print(enemies["ザコ"])
-enemies["123"] ="asdf"    #add element to dictionary
+enemies["123"] ="asdf"    # add element to dictionary
 print(enemies["123"])
-enemies["ザコ"] = 123    #change element in dictionary
+enemies["ザコ"] = 123    # change element in dictionary
 
-del enemies["ザコ"]    #delete element from dictionary
+del enemies["ザコ"]    # delete element from dictionary
 print(len(enemies))
 
-#04:辞書をループで処理する
-#Pythonのitemsと辞書を組み合わせてみましょう。
-'''【Python入門】for文を使った繰り返し文の書き方 | プロスタ
+
+'''
+# 04:辞書をループで処理する
+Pythonのitemsと辞書を組み合わせてみましょう。
+
+
+# 参考URL
+【Python入門】for文を使った繰り返し文の書き方 | プロスタ
 http://programming-study.com/technology/python-for/
 
 Python: 辞書の全てのキーと値をたどる – items(), keys(), values()メソッド
 http://www.yukun.info/blog/2008/06/python-dict2.html
 
 キーと値のリストを取得(keysメソッド, valuesメソッド, itemsメソッド) - 辞書 - Python入門
-https://www.pythonweb.jp/tutorial/dictionary/index8.html'''
+https://www.pythonweb.jp/tutorial/dictionary/index8.html
+'''
 
 # coding: utf-8
 # Your code here!
@@ -115,16 +135,22 @@ for (j, k) in points.items():
     sum2 = sum2 + k
 print(sum2)
 
-#05:リストの整列 
-#リストのソートについて学習しましょう。リストをソートすると、データをアイウエオ順・数字順といった具合に整列することができます
-'''[Python] コレクション型をソート - Qiita
+
+'''
+# 05:リストの整列
+リストのソートについて学習しましょう。リストをソートすると、
+データをアイウエオ順・数字順といった具合に整列することができます
+
+# 参考URL
+[Python] コレクション型をソート - Qiita
 https://qiita.com/ysk24ok/items/b546471c37b2f443f4c7#%E8%BE%9E%E6%9B%B8
 
 Python sortのまとめ (リスト、辞書型、Series、DataFrame) - Qiita
 https://qiita.com/shizuma/items/40f1fe4702608db40ac3
 
 【Python入門】list sortでリストの中身を効率的にソートする方法 | プロスタ
-http://programming-study.com/technology/python-list-sort/'''
+http://programming-study.com/technology/python-list-sort/
+'''
 
 # coding: utf-8
 # Your code here!
@@ -133,8 +159,8 @@ http://programming-study.com/technology/python-list-sort/'''
 weapons = ["うして", "いうと", "そそい", "たとい"]
 print(weapons)
 
-print(sorted(weapons))    #sort hiragana
-print(sorted(weapons, reverse = True))    #sort reverese
+print(sorted(weapons))    # sort hiragana
+print(sorted(weapons, reverse = True))    # sort reverese
 
 weapons2 = ["4.うして", "2.いうと", "20.そそい", "89.たとい"]
 print(sorted(weapons2))    # sorted by numbers
@@ -142,15 +168,20 @@ print(sorted(weapons2))    # sorted by numbers
 weapons3 = ["蘇うして始祖", "い得うと", "そそ足そい", "た憂ううとい"]
 print(sorted(weapons3))    # sorted by some utf-8
 
-#06:辞書の整列
-'''[Python] コレクション型をソート - Qiita
+
+'''
+# 06:辞書の整列
+
+# 参考URL
+[Python] コレクション型をソート - Qiita
 https://qiita.com/ysk24ok/items/b546471c37b2f443f4c7#%E8%BE%9E%E6%9B%B8
 
 Python sortのまとめ (リスト、辞書型、Series、DataFrame) - Qiita
 https://qiita.com/shizuma/items/40f1fe4702608db40ac3
 
 【Python入門】list sortでリストの中身を効率的にソートする方法 | プロスタ
-http://programming-study.com/technology/python-list-sort/'''
+http://programming-study.com/technology/python-list-sort/
+'''
 
 # coding: utf-8
 # Your code here!
@@ -161,9 +192,13 @@ print(weapons)
 print(sorted(weapons))    # sorted by keys and output is list
 print(sorted(weapons.items()))    # sorted by keys and output is taple list
 
-print(weapons.items())    #dict_items has no index
+print(weapons.items())    # dict_items has no index
 
-#07:RPGのアイテム一覧を再現
+
+'''
+# 07:RPGのアイテム一覧を再現
+'''
+
 # coding: utf-8
 # Your code here!
 

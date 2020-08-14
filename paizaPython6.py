@@ -1,23 +1,25 @@
-#2次元リストとは何かを学ぼう
+''' # Python入門編6: 多次元リストを理解しよう '''
+
 '''
+# 01:2次元リストとは何かを学ぼう
 データ構造とは　データの格納方法。
 変数　player = "taro"
 リスト　player[0] = "taro"
 辞書　chara["yucha"] = "taro"
 2次元リスト　party[0][2] = "pikatyu" party[0] = "taro"
-'''
-'''
-2次元リストとは
+
+# 2次元リストとは
 2次元リストとは、2つのインデックスで要素を指定するリストのこと。
 リストにリストを組み合わせて作成し、インデックスを2つ指定してデータを参照する。
 
-多次元リストの用途
+# 多次元リストの用途
 - RPGのマップ
 - 写真・イラストなどのイメージ
 - 3D-CGの空間座標
 - ゲームの盤面
 - 表形式データ
 
+# 参考URL
 Python入門(6) リスト
 http://www.ic.daito.ac.jp/~mizutani/python/intro6_python.html
 
@@ -28,7 +30,10 @@ https://docs.python.jp/3/tutorial/datastructures.html
 https://www.pythonweb.jp/tutorial/list/index1.html
 '''
 
-#02:2次元リストを作成する
+
+'''
+# 02:2次元リストを作成する
+'''
 
 # coding: utf-8
 # Your code here!
@@ -60,18 +65,22 @@ print(teams)
 print(teams[0])
 print(teams[0][1])    # 1st index = 1st elements, 2nd index = element in 1st element
 
-#03:2次元リストを操作する1 
-#2次元リストの基本操作を学習します。リストの要素を更新したり、長さを調べたりしてみましょう。
 
-# coding: utf-8
-# Your code here!
+'''
+# 03:2次元リストを操作する1 
+2次元リストの基本操作を学習します。
+リストの要素を更新したり、長さを調べたりしてみましょう。
 
-# 2次元リストの基本操作1
-'''要素の変更 - リスト - Python入門
+# 参考URL
+要素の変更 - リスト - Python入門
 https://www.pythonweb.jp/tutorial/list/index4.html
 
 リストのサイズの取得(len関数) - リスト - Python入門
-https://www.pythonweb.jp/tutorial/list/index5.html'''
+https://www.pythonweb.jp/tutorial/list/index5.html
+'''
+
+# coding: utf-8
+# Your code here!
 
 team_a = ["asd", "gsgs", "ttte"]
 team_b = ["assd", "gaasgs", "ettte"]
@@ -89,18 +98,21 @@ print(teams2)
 print(len(teams2))    # count elements in list
 print(len(teams2[0]))    # count elements in list in list
 
-#2次元リストを操作する2 
-#要素を追加・削除する基本的な操作を実際に試してみましょう。
-
-# coding: utf-8
-# Your code here!
+'''
+# 2次元リストを操作する2 
+要素を追加・削除する基本的な操作を実際に試してみましょう。
 
 # 2次元リストの基本操作
-'''要素の追加と連結(appendメソッド, extendメソッド) - リスト - Python入門
+# 参考URL
+要素の追加と連結(appendメソッド, extendメソッド) - リスト - Python入門
 https://www.pythonweb.jp/tutorial/list/index6.html
 
 要素の削除(del文, popメソッド, removeメソッド) - リスト - Python入門
-https://www.pythonweb.jp/tutorial/list/index8.html'''
+https://www.pythonweb.jp/tutorial/list/index8.html
+'''
+
+# coding: utf-8
+# Your code here!
 
 teams = [["勇者", "戦士"], ["盗賊", "忍者", "商人"], ["スライム", "ドラゴン", "魔王"], ["魔法使い"]]
 print(teams)
@@ -172,10 +184,14 @@ print("pop")
 print(innin.pop())    # get ()elements and remove
 print(innin)
 
-#05:ループでリストを処理する
-#2次元リストから離れて、ループを使ってリストを処理する方法について、さらに理解を深めます。たくさんのデータを持つリストを処理するには、ループ処理が欠かせません。2次元リストを使う時にも活躍します。
 
-'''enumerate関数でインデックスつきループを行う - Python Tips
+'''
+# 05:ループでリストを処理する
+2次元リストから離れて、ループを使ってリストを処理する方法について、さらに理解を深めます。
+たくさんのデータを持つリストを処理するには、ループ処理が欠かせません。2次元リストを使う時にも活躍します。
+
+# 参考URL
+enumerate関数でインデックスつきループを行う - Python Tips
 http://www.gesource.jp/programming/python/code/0022.html
 
 Python, enumerateの使い方: インデックスを1から開始 | Python / note.nkmk.me
@@ -212,15 +228,21 @@ for k in range(0, 10):
     results.append(result)    # add list into 2d list
 print(results)
 
-#06:2次元リストをforで作成する
-#forを使って2次元リストを作成してみましょう
 
-'''for文 - 繰り返し - Python入門
+'''
+# 06:2次元リストをforで作成する
+forを使って2次元リストを作成してみましょう
+
+# 参考URL
+for文 - 繰り返し - Python入門
 https://www.pythonweb.jp/tutorial/for/index3.html
+
 繰返し処理 - for, while 等 - Python 入門
 http://python.keicode.com/lang/control-flow-loop-for-while.php
+
 【Python入門】for文の使い方総まとめ | 侍エンジニア塾ブログ | プログラミング入門者向け学習情報サイト
-https://www.sejuku.net/blog/24766'''
+https://www.sejuku.net/blog/24766
+'''
 
 # coding: utf-8
 # Your code here!
@@ -253,8 +275,11 @@ numbers4 = [[i + 1 for i in range(3)] for j in range(4)]    # repeat A for j tim
 numbers4[0][2] = 2
 print(numbers4)
 
-#07:ドット絵を表示する
-#2次元リストで、簡単なドット絵を表示してみましょう。元になるイラストのドットの有無を、数字のゼロイチで表して、テキストで表示します。
+'''
+# 07:ドット絵を表示する
+2次元リストで、簡単なドット絵を表示してみましょう。
+元になるイラストのドットの有無を、数字のゼロイチで表して、テキストで表示します。
+'''
 
 # coding: utf-8
 # Your code here!
@@ -279,8 +304,12 @@ for line in enemy_img:
             print(" ", end = "")
     print()    # this do crlf
 
-#08:3次元リストで複数のドット絵を表示する
-#複数のドット絵を表示するために、3次元リストを使ってみます。ドット絵のパターンごとに、リストを切り替えて表示してみましょう。
+
+'''
+# 08:3次元リストで複数のドット絵を表示する
+複数のドット絵を表示するために、3次元リストを使ってみます。
+ドット絵のパターンごとに、リストを切り替えて表示してみましょう。
+'''
 
 # coding: utf-8
 # Your code here!
@@ -318,8 +347,11 @@ for img in enemy_img:
                 print(" ", end = "")
         print()
         
-#09:enumerateで2次元リストを操作する
-#Pythonのenumerateを使って、2次元リストを出力します。具体的な例として、RPGの簡単なマップを作って、城と町の間を道路で接続します。
+'''
+# 09:enumerateで2次元リストを操作する
+Pythonのenumerateを使って、2次元リストを出力します。
+具体的な例として、RPGの簡単なマップを作って、城と町の間を道路で接続します。
+'''
 
 # coding: utf-8
 # Your code here!
@@ -337,8 +369,12 @@ for i,line in enumerate(map):
     for dot in line:
         print(dot, end = "")
     print()
-    
-#10:2次元リストのマップに道を追加する
+
+
+'''
+# 10:2次元リストのマップに道を追加する
+'''
+
 # coding: utf-8
 # Your code here!
 
@@ -364,8 +400,11 @@ for i,line in enumerate(landmap):
     print()
 
 
-#11:標準入力から2次元リスト
-#標準入力から2次元リストを読み込んでみます。複数行のカンマで区切ったデータを用意して、それを2次元リストに割り当てます。
+'''
+# 11:標準入力から2次元リスト
+標準入力から2次元リストを読み込んでみます。
+複数行のカンマで区切ったデータを用意して、それを2次元リストに割り当てます。
+'''
 
 # coding: utf-8
 # Your code here!
@@ -415,14 +454,19 @@ print(letter_A)
 letter_B = [[str(dot) for dot in line] for line in letter_A]
 print(letter_B)
 
-#12:2次元リストで画像を配置
-#標準入力から読み込んだ2次元リストデータに合わせて、RPGのキャラクターを配置して表示してみます。将棋のコマの初期状態のような感じで、画像を表示してみましょう
 
-'''Python入門編3: ループ処理を学ぶ「データの読み込み（標準入力）」 | プログラミング学習ならpaizaラーニング
+'''
+# 12:2次元リストで画像を配置
+標準入力から読み込んだ2次元リストデータに合わせて、RPGのキャラクターを配置して表示してみます。
+将棋のコマの初期状態のような感じで、画像を表示してみましょう
+
+# 参考URL
+Python入門編3: ループ処理を学ぶ「データの読み込み（標準入力）」 | プログラミング学習ならpaizaラーニング
 https://paiza.jp/works/python3/primer/beginner-python3/4024
 
 文字列を分割する！Pythonでsplit関数を使う方法 | TechAcademyマガジン
-https://techacademy.jp/magazine/15553'''
+https://techacademy.jp/magazine/15553
+'''
 
 # coding: utf-8
 # Your code here!
