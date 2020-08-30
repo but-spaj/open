@@ -1,3 +1,3 @@
 # open
 
-*paiza learning python3
+*paiza learning python3 → removed
